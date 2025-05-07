@@ -1,88 +1,77 @@
-# Animal Classification Project
-Overview
-This Jupyter Notebook (Animal_project.ipynb) contains a complete pipeline for building and training an animal image classifier using TensorFlow and the ResNet50 architecture. The project demonstrates how to:
+# 🐾 Animal Classification Project
 
-Split a dataset into training and test sets
+## 📘 Overview
+This Jupyter Notebook (`Animal_project.ipynb`) contains a complete pipeline for building and training an animal image classifier using **TensorFlow** and the **ResNet50** architecture. The project demonstrates how to:
 
-Preprocess and load image data
+- ✅ Split a dataset into training and test sets  
+- 🧼 Preprocess and load image data  
+- 🧠 Build a transfer learning model using ResNet50  
+- 🚀 Train and evaluate the model  
+- 💾 Save the trained model for future use  
+- 🔍 Make predictions on new images  
 
-Build a transfer learning model using ResNet50
+The classifier is designed to recognize **15 different animal classes**, including:
+> Bear, Bird, Cat, Cow, Deer, Dog, Dolphin, Elephant, Giraffe, Horse, Kangaroo, Lion, Panda, Tiger, Zebra
 
-Train and evaluate the model
+---
 
-Save the trained model for future use
+## 📦 Requirements
 
-Make predictions on new images
+Make sure the following are installed in your environment:
 
-The classifier is designed to recognize 15 different animal classes including bear, bird, cat, cow, deer, dog, dolphin, elephant, giraffe, horse, kangaroo, lion, panda, tiger, and zebra.
+- Python 3.x  
+- TensorFlow 2.x  
+- Keras  
+- OpenCV  
+- NumPy  
+- Other standard Python libraries: `pandas`, `matplotlib`, etc.
 
-Requirements
-To run this notebook, you'll need:
+---
 
-Python 3.x
+## 📂 Dataset Requirements
 
-TensorFlow 2.x
+The code expects an animal image dataset with the following structure:
+- The `dataset/` directory should contain one subfolder for each animal class.
+- Each subfolder must be named after the animal class (e.g., `Bear`, `Bird`, `Cat`, etc.).
+- Inside each subfolder, include multiple image files representing that class (e.g., `bear_image_1.jpg`, `bear_image_2.jpg`, etc.).
 
-Keras
 
-OpenCV
+**Key characteristics:**
+- Images organized in subfolders by class
+- Supported formats: JPG, JPEG, PNG
+- Recommended size: **224x224 pixels** (auto-resized if needed)
+- Balanced class distribution improves performance
 
-NumPy
+---
 
-Other standard Python data science libraries (Pandas, Matplotlib, etc.)
+## 🚀 How to Use
 
-Dataset Requirements
-The code expects an animal image dataset structured in the following way:
+1. Place your dataset inside the `dataset/` folder as described above.  
+2. Open and run `Animal_project.ipynb` sequentially:
+   - 📁 Dataset split into train/test sets  
+   - 🧠 Model construction, training, evaluation  
+   - 💾 Model saved as `.h5` and `.keras`  
+3. Use the provided prediction function to classify new images.
 
-dataset/
-    ├── Bear/
-    │   ├── bear_image_1.jpg
-    │   ├── bear_image_2.jpg
-    │   └── ...
-    ├── Bird/
-    │   ├── bird_image_1.jpg
-    │   ├── bird_image_2.jpg
-    │   └── ...
-    └── ... (other animal classes)
-Key Dataset Characteristics:
-Images organized in subfolders by class
+---
 
-Supported image formats (JPG/JPEG/PNG)
+## 📊 Model Performance
 
-Recommended image size: 224x224 pixels (though the code will resize images)
+- **Training Accuracy:** ~100%  
+- **Validation Accuracy:** ~96.7%  
 
-Balanced distribution across classes is ideal for best performance
+---
 
-How to Use
-Place your animal image dataset in the dataset/ folder with the structure shown above
+## 💾 Saved Models
 
-Run the notebook cells sequentially:
+Two formats of the trained model are saved:
 
-First cell: Dataset splitting into train/test sets
+- `animal_classifier_resnet50.h5` – Traditional HDF5 format  
+- `animal_classifier_resnet50.keras` – Recommended modern Keras format  
 
-Subsequent cells: Model building, training, and evaluation
+---
 
-The trained model will be saved as animal_classifier_resnet50.h5 and .keras formats
+## 🔍 Prediction Example
 
-Use the prediction function to classify new animal images
-
-Model Performance
-The model achieves:
-
-Training accuracy: ~100%
-
-Validation accuracy: ~96.7%
-
-Saved Models
-The notebook saves two versions of the trained model:
-
-animal_classifier_resnet50.h5 - Traditional HDF5 format
-
-animal_classifier_resnet50.keras - Recommended Keras format
-
-Prediction Example
-The notebook includes a function to make predictions on new images:
-
-python
-predict_image("test/Kangaroo/Kangaroo_16_3.jpg")
-This will output the predicted class and confidence score.
+Use the built-in function to predict on a new image:
+ and replace it with the location of the image to be tested.
