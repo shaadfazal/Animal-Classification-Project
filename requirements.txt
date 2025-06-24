@@ -1,0 +1,5 @@
+flask
+mlflow
+torch
+torchvision
+Pillow
